@@ -1,0 +1,22 @@
+import java.util.HashMap;
+
+public class FrequencyCounter {
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 2, 5, 4, 2, 3, 5};
+
+        HashMap<Integer, Integer> freqMap = new HashMap<>();
+
+        for (int num : arr) {
+            if (freqMap.containsKey(num)) {
+                freqMap.put(num, freqMap.get(num) + 1);
+            } else {
+                freqMap.put(num, 1);
+            }
+        }
+
+        System.out.println("Element Frequencies:");
+        for (int key : freqMap.keySet()) {
+            System.out.println(key + " -> " + freqMap.get(key));
+        }
+    }
+}
